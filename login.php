@@ -2,11 +2,21 @@
 require 'header.php'; 
 include_once 'connect.php';
 ?>
-        <form method=post id="form">
-        	Username: <input type="text" placeholder="username or email" name="username"><br>
-           	Password: <input type="password" placeholder="password" name="password"><br>
-        	<input type="submit" value="Submit"> 
-        </form>
+		<div class="form-container">
+			<form method="post"  id="form" class="login-form">
+			<img src="images/login_icon.png" alt="Login Icon" />	
+			<h1>Login</h1>
+			<div class="form-input">
+				<input type="text" name="username" id="username" placeholder="   Username" class="form-data" required />
+			</div>
+			<div class="form-input-material">
+				<input type="password" name="password" id="password" placeholder="   Password" class="form-data" required />
+			</div>
+			<input type="submit" class="btn" value="Submit"></input>
+			<label>Don't have an account? <a href="">Sign up here</a> </label>
+			</form>
+		</div>
+
         	<?php
 
 	        // Check if username and password aren't null
