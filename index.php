@@ -63,9 +63,6 @@ include_once 'connect.php';
        */
       if(!empty($_GET['search']) && !is_null($_GET['search'])){
          $searchval = $_GET['search'];
-         // $song_query = $song_query." WHERE song_name LIKE '%".$searchval."%' OR song_id LIKE '%".$searchval."%'";
-         // $artist_query = $artist_query." WHERE artist_name LIKE '%".$searchval."%' OR artist_id LIKE '%".$searchval."%'";
-         // $album_query = $album_query." WHERE album_name LIKE '%".$searchval."%' OR album_id LIKE '%".$searchval."%'";
          echo "Searching for \"".$searchval."\" <a href=\"index.php?search=\">[clear]</a><br>";
 
          $join = "
@@ -111,15 +108,6 @@ include_once 'connect.php';
       if($songs_result && $songs_result->num_rows > 0){
          while($row = $songs_result->fetch_assoc()){
 
-            // Fetch artist associated with song
-
-            // $songartist_query = $conn->query("SELECT artist_name FROM artists WHERE artist_id=".$row['artist_id']);
-            // $songartist_result = $songartist_query->fetch_row();
-            // $artist_name = "N/A";
-
-            // ==========   test query ----------------------------------------------------------------
-
-
             // song artist cols
             // song_id | album_id | artist_id | genre_id | song_name | song_duration
 
@@ -133,12 +121,6 @@ include_once 'connect.php';
 
 				$songartist_result = $songartist_query->fetch_row();
 				$songalbum_result = $songalbum_query->fetch_row();
-
-            //echo "array lengths".count($songartist_result).", second: ".count($song_duration_result);
-            //echo $song_result[4]." - ". $songartist_result[0] ." -> Length: ".gmdate("i:s", $row['song_duration'])."<br>";
-            //echo "test[]  ".$songduration_result[1]."<br>";
-           // echo $songartist_result[5];
-
 
             // Check if artist is null
             if(!is_null($songartist_result)){
@@ -194,8 +176,6 @@ include_once 'connect.php';
       if($album_result && $album_result->num_rows > 0){
          while($row = $album_result->fetch_assoc()){
             echo "<li>  <a href=\"displaypage.php?id=".$row['album_id']."&table=albums\">".$row['album_name']." <br>".gmdate("H:i:s", $row['album_duration']). "<br></a> </li>";
-            // " <a href=\"displaypage.php?id=".$row['album_id']."&table=albums\">More Info</a> 
-            //echo $row['album_name']." [<a href=\"displaypage.php?id=".$row['album_id']."&table=albums\">view</a>]<br>";
          }
          echo "</ul>";
       } else {

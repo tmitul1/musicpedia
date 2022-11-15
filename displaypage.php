@@ -46,7 +46,6 @@ include_once 'connect.php';
 		while($row = $result->fetch_assoc()){
 
 			// If value is from songs table 
-			// might make it so it doesn't come from songs list, only artist or album
 			if(strcmp($table, "songs") == 0){
 
 				//echo "Displaying info for \"".$row['song_name']."\" [<a href=\"index.php\">back</a>]<br><br>";
@@ -114,7 +113,6 @@ include_once 'connect.php';
 						echo "<td>".gmdate("i:s", $artist_songs_result['song_duration'])."</td>"; //only mins and sec for songs
 					echo "</tr>";
 
-					//echo $artistsongs_result['song_name']." (Song ID: ".$artistsongs_result['song_id'].")<br>";
 				}
 				echo "</table>";
 
@@ -125,7 +123,6 @@ include_once 'connect.php';
 	
 
 				while($artist_album_result1 = $artist_album_query1->fetch_assoc()){
-					//echo "<li>".$artist_album_result1['album_name']." <br>".gmdate("H:i:s", $artist_album_result1['album_duration']). "</li>";
 					echo "<li>  <a href=\"displaypage.php?id=".$artist_album_result1['album_id']."&table=albums\">".$artist_album_result1['album_name']." <br>".gmdate("H:i:s", $artist_album_result1['album_duration']). "<br></a> </li>";
 				}
 			}
@@ -133,8 +130,6 @@ include_once 'connect.php';
 
 			// If value is from albums table
 			if(strcmp($table, "albums") == 0){
-
-				//echo "Displaying info for \"".$row['album_name']."\" [<a href=\"index.php\">back</a>]<br><br>";
 
 				echo "<a class='back_btn' href=\"index.php\">back</a>";
 				// Get songs from album
