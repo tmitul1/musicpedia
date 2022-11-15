@@ -19,7 +19,7 @@ include_once 'connect.php';
     echo "<a class='back_btn' href=\"index.php\">back</a>";
     echo "<br><br>";
     // get users
-    $user_query = $conn->query("SELECT user_name, email, user_bio FROM users");
+    $user_query = $conn->query("SELECT user_name, email, user_bio FROM users ORDER BY user_name ASC");
 
 
     while($user_result = $user_query->fetch_assoc()){
