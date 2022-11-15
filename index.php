@@ -34,8 +34,7 @@ include_once 'connect.php';
                      LEFT JOIN albums
                      ON songs.album_id = albums.album_id
                      LEFT JOIN artists
-                     ON songs.artist_id = artists.artist_id
-                     ORDER BY albums.album_name";
+                     ON songs.artist_id = artists.artist_id";
       //---- artist ----//
       $artist_query = "SELECT DISTINCT
                            artists.artist_id, artists.artist_name
@@ -44,8 +43,7 @@ include_once 'connect.php';
                      LEFT JOIN albums
                      ON songs.album_id = albums.album_id
                      LEFT JOIN artists
-                     ON songs.artist_id = artists.artist_id
-                     ORDER BY albums.album_name";
+                     ON songs.artist_id = artists.artist_id";
       //---- album ----//
       $album_query = "SELECT DISTINCT
                            albums.album_id, albums.album_name, albums.album_duration
@@ -54,8 +52,7 @@ include_once 'connect.php';
                      LEFT JOIN albums
                      ON songs.album_id = albums.album_id
                      LEFT JOIN artists
-                     ON songs.artist_id = artists.artist_id
-                     ORDER BY albums.album_name";
+                     ON songs.artist_id = artists.artist_id";
 
 
       /*
@@ -79,17 +76,20 @@ include_once 'connect.php';
          $song_query = $song_query.
                   " WHERE song_name LIKE '%".$searchval."%'
                   OR artists.artist_name LIKE '%".$searchval."%'
-                  OR albums.album_name LIKE '%".$searchval."%'";
+                  OR albums.album_name LIKE '%".$searchval."%'
+                  ORDER BY albums.album_name";
       //---- artist ----//
          $artist_query = $artist_query.
                   " WHERE song_name LIKE '%".$searchval."%'
                   OR artists.artist_name LIKE '%".$searchval."%'
-                  OR albums.album_name LIKE '%".$searchval."%'";
+                  OR albums.album_name LIKE '%".$searchval."%'
+                  ORDER BY albums.album_name";
       //---- album ----//
          $album_query = $album_query.
                   " WHERE song_name LIKE '%".$searchval."%'
                   OR artists.artist_name LIKE '%".$searchval."%'
-                  OR albums.album_name LIKE '%".$searchval."%'";
+                  OR albums.album_name LIKE '%".$searchval."%'
+                  ORDER BY albums.album_name";
 
       } else {
       }

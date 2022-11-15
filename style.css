@@ -113,6 +113,9 @@ body{
 .dur{
     width: 15%;
 }
+
+
+
 /* ============ HEADERS ===========*/
 .back_btn{
     height: 25px;
@@ -341,9 +344,75 @@ body{
     -webkit-box-shadow: -4px -5px 23px -4px rgba(255,255,255,0.75);
     -moz-box-shadow: -4px -5px 23px -4px rgba(255,255,255,0.75);
 }
-
-/* ======= Sign Up Section ======= */
 .login-form label a:link, .login-form label a:visited{
     color: #fff;
     font-weight: bold;
+}
+/* ======= Sign Up Section ======= */
+
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 40px;
+    color: white;
+    background: #000;
+    border-radius: 1.5rem;
+    box-shadow: -4px -5px 23px -4px rgba(255,255,255,0.75);
+    -webkit-box-shadow: -4px -5px 23px -4px rgba(255,255,255,0.75);
+    -moz-box-shadow: -4px -5px 23px -4px rgba(255,255,255,0.75);
+}
+
+.signup-form-container {
+    width: 70%;
+    margin: auto;
+}
+
+.signup-form-input{
+    margin: 12px 0;
+}
+.signup-form-data{
+    width: 250px;
+    height: 25px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 1rem;
+    -webkit-tap-highlight-color: transparent;
+}
+.signup-form-data:focus{
+    box-shadow: -4px -5px 23px -4px rgba(255,255,255,0.75);
+    -webkit-box-shadow: -4px -5px 23px -4px rgba(255,255,255,0.75);
+    -moz-box-shadow: -4px -5px 23px -4px rgba(255,255,255,0.75);
+    outline-width: 0;
+    border-color: #e48b8b !important;
+    
+}
+.signupButton{
+    padding: 8px 20px;
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 175px;
+    margin: 18px 0 9px 0;
+    background-color: #bdc3c7;
+}
+.signupButton:hover{
+    background-color: #e48b8b;
+    box-shadow: -4px -5px 23px -4px rgba(255,255,255,0.75);
+    -webkit-box-shadow: -4px -5px 23px -4px rgba(255,255,255,0.75);
+    -moz-box-shadow: -4px -5px 23px -4px rgba(255,255,255,0.75);
+}
+
+/*=========== TOTAL USERS ============= */
+
+.name, .email, .bio{
+    padding: 0;
+}
+.name{
+    width: 30%;
+}
+.email{
+    width: 30%;
+}
+.bio{
+    width: 40%;
 }

@@ -9,11 +9,11 @@ include_once 'connect.php';
 			<div class="form-input">
 				<input type="text" name="username" id="username" placeholder="   Username" class="form-data" required />
 			</div>
-			<div class="form-input-material">
+			<div class="form-input">
 				<input type="password" name="password" id="password" placeholder="   Password" class="form-data" required />
 			</div>
 			<input type="submit" class="btn" value="Submit"></input>
-			<label>Don't have an account? <a href="">Sign up here</a> </label>
+			<label>Don't have an account? <a href="signup.php">Sign up here</a> </label>
 			</form>
 		</div>
 
