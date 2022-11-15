@@ -1,0 +1,281 @@
+body{
+    margin: auto;
+    background: #bdc3c7; 
+    font-family: Sans-serif;
+}
+.title{
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    letter-spacing: 2px;
+    display: block;
+}
+/* ======== NAV BAR ======== */
+.sideMenu{
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 25px;
+    left: 15px;
+    border-radius: 1rem;
+    border: 2px solid rgb(119, 119, 119);
+    background: rgb(255, 255, 255);
+    overflow-x: hidden;
+
+}
+.sideMenu a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #1670e6;
+    border: 1px solid rgb(119, 119, 119);
+    border-collapse: collapse;
+    display: block;
+}
+.sideMenu a:hover {
+    background: #e48b8b;
+    color: #ffffff;
+}
+
+.content{
+    margin-left: 140px;
+}
+.main{
+    width: 60%;
+    margin-top: 25px;
+    margin-left: 200px;
+    background: #909599; 
+    border: 3px solid white;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.search-input{
+    width: 250px;
+    height: 1.5rem;
+    border: 2px solid #ca2c2c;
+    border-radius: 5px;
+}
+.search-btn{
+    width: 55px;
+    height: 1.5rem;
+    text-align: center;
+}
+.results{
+    width: 99%;
+    height: 600px;
+    margin: auto;
+    padding-right: 25px;
+    overflow-y: scroll;
+}
+
+.results-table, .results-table th, .results-table td, .results-table tr{
+    border: 2px solid #ffffff;
+    border-collapse: collapse;
+    text-align: center;
+    vertical-align: middle;
+}
+.results-table{
+    border: 5px solid #fff;
+}
+
+.results-table thead th{
+    height: 40px;
+    padding: 3px;
+    font-size: 16px;
+    position: sticky; 
+    top: 0;
+    z-index: 2;
+    border: 2px solid #ffffff;
+    background-color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.results-table tr{
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+}
+.results-table td{
+    padding: 8px;
+}
+
+.sName, .artName, .alName, .dur{
+    padding: 0;
+}
+.sName{
+    width: 35%;
+}
+.artName{
+    width: 25%;
+}
+.alName{
+    width: 25%;
+}
+.dur{
+    width: 15%;
+}
+/* ============ HEADERS ===========*/
+.back_btn{
+    height: 25px;
+    width: 75px;
+    padding: 10px;
+    margin-top: 25px;
+    background-color: #ffffff;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 3px;
+}
+.back_btn:link, .back_btn:visited{
+    color: #000;
+    text-decoration: none;
+}
+.back_btn:hover{
+    background:#e48b8b;
+}
+.artistHead{
+    height: 30px;
+    width: 200px;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: 25px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.albumHead{
+    height: 125px;
+    width: 400px;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: 25px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.albumHead img{
+    width: 100px;
+    height: 100px;
+    display: block;
+    border: 1px solid #fff;
+}
+.album_image{
+    flex-basis: 30%;
+    padding:2px;
+}
+.album_info{
+    width: 80%;
+}
+/* ============ ARTIST INFORMATION CARDS ===========*/
+.main_artistCard li{
+    height: 30px;
+    width: 250px;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: 7px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+}
+.main_artistCard li a{
+    margin-top: 5px;
+    display: block;
+    text-decoration: none;
+}
+
+.main_artistCard li a:link, .main_artistCard li a:visited{
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+}
+
+.main_artistCard li:hover{
+    background:#e48b8b;
+}
+
+
+
+/* ============ ALBUM INFORMATION CARDS ===========*/
+.albumCard li{
+    height:50px;
+    width: 350px;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: 15px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 100%;
+    background-color: #fff;
+}
+.albumCard li a{
+    margin-top: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.albumCard li a:link, .albumCard li a:visited{
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+}
+
+.albumCard li:hover{
+    background:#e48b8b;
+}
+.main_albumCard li{
+    height: 50px;
+    width: 350px;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: 15px;
+    text-align: center;
+    vertical-align: middle;
+    list-style: none;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 100%;
+    background-color: #fff;
+}
+.main_albumCard li a{
+    margin-top: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.main_albumCard li a:link, .main_albumCard li a:visited{
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+}
+
+.main_albumCard li:hover{
+    background:#e48b8b;
+}
+
+
+
+
