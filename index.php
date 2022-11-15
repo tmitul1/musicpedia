@@ -60,8 +60,9 @@ include_once 'connect.php';
        */
       if(!empty($_GET['search']) && !is_null($_GET['search'])){
          $searchval = $_GET['search'];
-         echo "Searching for \"".$searchval."\" <a href=\"index.php?search=\">[clear]</a><br>";
 
+         echo "<br> Searching for \"".$searchval."\" <a class='clear_btn' href=\"index.php?search=\">Clear</a>";
+        // echo "<a class='clear_btn' href=\"index.php?search=\">Clear</a>";
          $join = "
          SELECT * FROM songs
          LEFT JOIN albums

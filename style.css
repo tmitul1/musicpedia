@@ -63,7 +63,7 @@ body{
 }
 .results{
     width: 99%;
-    height: 600px;
+    height: 500px;
     margin: auto;
     padding-right: 25px;
     overflow-y: scroll;
@@ -135,6 +135,29 @@ body{
 .back_btn:hover{
     background:#e48b8b;
 }
+
+
+/*==== CLEAR ====*/
+.clear_btn{
+    height: 7px;
+    width: 55px;
+    padding: 2px;
+    margin-top: 25px;
+    font-size: 14px;
+    background-color: #ffffff;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 3px;
+}
+.clear_btn:link, .back_btn:visited{
+    color: #000;
+    text-decoration: none;
+}
+.clear_btn:hover{
+    background:#e48b8b;
+}
+
 .artistHead{
     height: 30px;
     width: 200px;
