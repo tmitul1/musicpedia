@@ -3,8 +3,8 @@
     //connect to SQL Database
     $servername = 'localhost';
     $database = 'musicpedia';
-    $username = 'root'; //'asiegel11'; 
-    $password = ''; //'Jigglypuff69()';
+    $username = 'root';  
+    $password = ''; 
 
     /*
     * Create connection
