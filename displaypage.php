@@ -15,15 +15,20 @@ include_once 'connect.php';
 	// Select everything from the specified database
 	$query = "";
 
-	if(strcmp($table, "songs") == 0){
-	$query = "SELECT * FROM songs WHERE song_id=".$id;
-	} else if(strcmp($table, "artists") == 0){
+	if(strcmp($table, "artists") == 0){
 	$query = "SELECT * FROM artists WHERE artist_id=".$id;
 	} else if(strcmp($table, "albums") == 0){
 	$query = "SELECT * FROM albums WHERE album_id=".$id;
 	}
 
 	$result = $conn->query($query);
+
+
+	// can be implemented later for clickable songs
+
+	// if(strcmp($table, "songs") == 0){
+	// 	$query = "SELECT * FROM songs WHERE song_id=".$id;
+	// 	}
 
 	/*
 	* Get results based on table value
@@ -87,8 +92,15 @@ include_once 'connect.php';
 				//echo "Displaying info for \"".$row['artist_name']."\" [<a href=\"index.php\">back</a>]<br><br>";
 				echo "<a class='back_btn' href=\"index.php\">back</a>";
 				// Get songs and albums associated with artists
-				$artist_songs_query = $conn->query("SELECT * FROM songs LEFT JOIN albums ON songs.album_id = albums.album_id WHERE songs.artist_id=".$row['artist_id']." ORDER BY album_name");
-				$artist_album_query1 = $conn->query("SELECT album_name, album_duration, album_id FROM albums WHERE artist_id=".$row['artist_id']);
+				$artist_songs_query = $conn->query("
+													SELECT * FROM songs LEFT JOIN albums ON songs.album_id = albums.album_id 
+													WHERE songs.artist_id=".$row['artist_id']." ORDER BY album_name"
+												);
+
+				$artist_album_query1 = $conn->query("
+													SELECT album_name, album_duration, album_id FROM albums 
+													WHERE artist_id=".$row['artist_id']
+												);
 
 				// Display data === put artist info here
 				echo "<div class='artistHead'>";
@@ -101,7 +113,10 @@ include_once 'connect.php';
 				while($artist_songs_result = $artist_songs_query->fetch_assoc()){
 
 				// $songartist_query = $conn->query("SELECT artist_name FROM artists WHERE artist_id=".$row['artist_id']);
-				$artist_album_query = $conn->query("SELECT album_name FROM albums WHERE album_id=".$artist_songs_result['album_id']);
+				$artist_album_query = $conn->query("
+													SELECT album_name FROM albums 
+													WHERE album_id=".$artist_songs_result['album_id']
+												);
 
 				// $songartist_result = $songartist_query->fetch_row();
 				$artist_album_result = $artist_album_query->fetch_row();

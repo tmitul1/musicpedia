@@ -46,7 +46,7 @@ include_once 'connect.php';
                      ON songs.artist_id = artists.artist_id";
       //---- album ----//
       $album_query = "SELECT DISTINCT
-                           albums.album_id, albums.album_name, albums.album_duration
+                           albums.album_id, albums.album_name, albums.album_duration, albums.year
                      FROM
                            songs
                      LEFT JOIN albums
@@ -62,16 +62,6 @@ include_once 'connect.php';
          $searchval = $_GET['search'];
 
          echo "<br> Searching for \"".$searchval."\" <a class='clear_btn' href=\"index.php?search=\">Clear</a>";
-        // echo "<a class='clear_btn' href=\"index.php?search=\">Clear</a>";
-         $join = "
-         SELECT * FROM songs
-         LEFT JOIN albums
-         ON songs.album_id = albums.album_id
-         LEFT JOIN artists
-         ON songs.artist_id = artists.artist_id";
-         $clause = "WHERE song_name LIKE '%".$searchval."%'
-         OR artists.artist_name LIKE '%".$searchval."%'
-         OR albums.album_name LIKE '%".$searchval."%'";
 
       //---- song ----//
          $song_query = $song_query.
@@ -176,7 +166,7 @@ include_once 'connect.php';
        */
       if($album_result && $album_result->num_rows > 0){
          while($row = $album_result->fetch_assoc()){
-            echo "<li>  <a href=\"displaypage.php?id=".$row['album_id']."&table=albums\">".$row['album_name']." <br>".gmdate("H:i:s", $row['album_duration']). "<br></a> </li>";
+            echo "<li>  <a href=\"displaypage.php?id=".$row['album_id']."&table=albums\">".$row['album_name']." (" .$row['year'] .") <br>".gmdate("H:i:s", $row['album_duration']). "<br></a> </li>";
          }
          echo "</ul>";
       } else {
